@@ -1,2 +1,0 @@
-# Worldsport
-Eusport
