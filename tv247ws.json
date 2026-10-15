@@ -1,0 +1,194 @@
+[
+  {
+    "name": "usabc",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ABC&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/abc.webp"
+  },
+  {
+    "name": "usaccnetwork",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ACC%20Network&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/acc-network.webp"
+  },
+  {
+    "name": "aeabudhabisports1",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Abu%20Dhabi%20Sports%201&code=ae&user=cdnlivetv&plan=free",
+    "group": "ae",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/ae/abu-dhabi-sports-1.webp"
+  },
+  {
+    "name": "usaltitude",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Altitude&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/altitude.webp"
+  },
+  {
+    "name": "usarizonadiamondbacks",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Arizona%20Diamondbacks&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/arizona-diamondbacks.webp"
+  },
+  {
+    "name": "usastrocricket",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Astro%20Cricket&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/astro-cricket.webp"
+  },
+  {
+    "name": "usatlantabraves",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Atlanta%20Braves&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/atlanta-braves.webp"
+  },
+  {
+    "name": "usbbc",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/bbc.webp"
+  },
+  {
+    "name": "ukbbcfour",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20Four&code=gb&user=cdnlivetv&plan=free",
+    "group": "uk",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-kingdom/bbc-four.webp"
+  },
+  {
+    "name": "ukbbcone",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20One&code=gb&user=cdnlivetv&plan=free",
+    "group": "uk",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-kingdom/bbc-one.webp"
+  },
+  {
+    "name": "ukbbcthree",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20Three&code=gb&user=cdnlivetv&plan=free",
+    "group": "uk",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-kingdom/bbc-three.webp"
+  },
+  {
+    "name": "ukbbctwo",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20Two&code=gb&user=cdnlivetv&plan=free",
+    "group": "uk",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-kingdom/bbc-two.webp"
+  },
+  {
+    "name": "usbet",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BET&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/bet.webp"
+  },
+  {
+    "name": "usbaltimoreorioles",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Baltimore%20Orioles&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/baltimore-orioles.webp"
+  },
+  {
+    "name": "ptbenficatv",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Benfica%20TV&code=pt&user=cdnlivetv&plan=free",
+    "group": "pt",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/portugal/benfica-tv.webp"
+  },
+  {
+    "name": "usbostonredsox",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Boston%20Red%20Sox&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/boston-red-sox.webp"
+  },
+  {
+    "name": "uscbs",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=CBS&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/cbs.webp"
+  },
+  {
+    "name": "uscbssportsgolazo",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=CBS%20Sports%20Golazo&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/cbs-sports-golazo.webp"
+  },
+  {
+    "name": "uscnbc",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=CNBC&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/cnbc.webp"
+  },
+  {
+    "name": "uscnn",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=CNN&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+  },
+  {
+    "name": "sabeinsports8",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%208&code=sa&user=cdnlivetv&plan=free",
+    "group": "sa",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/saudi-arabia/bein-sports-8.webp"
+  },
+  {
+    "name": "sabeinsports9",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%209&code=sa&user=cdnlivetv&plan=free",
+    "group": "sa",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/saudi-arabia/bein-sports-9.webp"
+  },
+  {
+    "name": "frbeinsportsmax10",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%2010&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-10.webp"
+  },
+  {
+    "name": "frbeinsportsmax4",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%204&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-4.webp"
+  },
+  {
+    "name": "frbeinsportsmax5",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%205&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-5.webp"
+  },
+  {
+    "name": "frbeinsportsmax6",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%206&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-6.webp"
+  },
+  {
+    "name": "frbeinsportsmax7",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%207&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-7.webp"
+  },
+  {
+    "name": "frbeinsportsmax8",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%208&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-8.webp"
+  },
+  {
+    "name": "frbeinsportsmax9",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20MAX%209&code=fr&user=cdnlivetv&plan=free",
+    "group": "fr",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/france/bein-sports-max-9.webp"
+  },
+  {
+    "name": "esbeinsportsn",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20N&code=es&user=cdnlivetv&plan=free",
+    "group": "es",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/spain/bein-sports-n.webp"
+  },
+  {
+    "name": "esbeinsportsxtra",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20SPORTS%20XTRA&code=es&user=cdnlivetv&plan=free",
+    "group": "es",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/spain/bein-sports-xtra.webp"
+  },
+  {
+    "name": "ustrutv",
+    "url": "https://cdnlivetv.tv/api/v1/channels/player/?name=truTV&code=us&user=cdnlivetv&plan=free",
+    "group": "us",
+    "logo": "https://cdnlivetv.tv/api/v1/channels/images6318/united-states/trutv.webp"
+  }
+]
+ 
