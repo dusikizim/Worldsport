@@ -1,0 +1,211 @@
+import concurrent.futures
+import os
+import re
+import warnings
+import requests
+import urllib3
+
+# Sertifika uyarılarını kapatmak için
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+warnings.filterwarnings('ignore')
+
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,"
+        " like Gecko) Chrome/121.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+    ),
+}
+
+# Hedef dosya adı
+OUTPUT_FILENAME = "tv247tr.m3u"
+
+
+def get_andro_content():
+    """Çalışan yayın linklerini yakalar ve {Kanal Adı: URL} sözlüğü döner."""
+    print("--- Andro Panel Taraması Başlatıldı ---")
+    channel_streams = {}
+    base_pattern = "https://mahsunsports{}.xyz"
+    headers = HEADERS.copy()
+
+    channels = [
+        ("androstreamlivebiraz1", 'BEIN SPORTS 1-M'),
+        ("androstreamlivebs1", 'BEIN SPORTS 1-M2'),
+        ("androstreamlivebs2", 'BEIN SPORTS 2-M'),
+        ("androstreamlivebs3", 'BEIN SPORTS 3-M'),
+        ("androstreamlivebs4", 'BEIN SPORTS 4-M'),
+        ("androstreamlivebs5", 'BEIN SPORTS 5-M'),
+        ("androstreamlivebsm1", 'BEIN SPORTS MAX 1-M'),
+        ("androstreamlivebsm2", 'BEIN SPORTS MAX 2-M'),
+        ("androstreamlivess1", 'S SPORT 1-M'),
+        ("androstreamlivess2", 'S SPORT 2-M'),
+        ("androstreamlivets", 'TİVİBU SPOR-M'),
+        ("androstreamlivets1", 'TİVİBU SPOR 1-M'),
+        ("androstreamlivets2", 'TİVİBU SPOR 2-M'),
+        ("androstreamlivets3", 'TİVİBU SPOR 3-M'),
+        ("androstreamlivets4", 'TİVİBU SPOR 4-M'),
+        ("androstreamlivesm1", 'SMART SPOR 1-M'),
+        ("androstreamlivesm2", 'SMART SPOR 2-M'),
+        ("androstreamlivees1", 'EURO SPORT 1-M'),
+        ("androstreamlivees2", 'EURO SPORT 2-M'),
+        ("androstreamlivetb", 'TABİİ SPOR-M'),
+        ("androstreamlivetb1", 'TABİİ SPOR 1-M'),
+        ("androstreamlivetb2", 'TABİİ SPOR 2-M'),
+        ("androstreamlivetb3", 'TABİİ SPOR 3-M'),
+        ("androstreamlivetb4", 'TABİİ SPOR 4-M'),
+        ("androstreamlivetb5", 'TABİİ SPOR 5-M'),
+        ("androstreamlivetb6", 'TABİİ SPOR 6-M'),
+        ("androstreamlivetb7", 'TABİİ SPOR 7-M'),
+        ("androstreamlivetb8", 'TABİİ SPOR 8-M'),
+        ("androstreamliveexn", 'EXXEN-M'),
+        ("androstreamliveexn1", 'EXXEN 1-M'),
+        ("androstreamliveexn2", 'EXXEN 2-M'),
+        ("androstreamliveexn3", 'EXXEN 3-M'),
+        ("androstreamliveexn4", 'EXXEN 4-M'),
+        ("androstreamliveexn5", 'EXXEN 5-M'),
+        ("androstreamliveexn6", 'EXXEN 6-M'),
+        ("androstreamliveexn7", 'EXXEN 7-M'),
+        ("androstreamliveexn8", 'EXXEN 8-M'),
+    ]
+
+    def check_domain(index):
+        url = base_pattern.format(index)
+        try:
+            response = requests.get(
+                url, headers=headers, timeout=5, verify=False
+            )
+            if response.status_code == 200:
+                return url
+        except:
+            return None
+        return None
+
+    print("Aktif domain aranıyor (10-99)...")
+    active_site = None
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+        futures = [executor.submit(check_domain, i) for i in range(10, 100)]
+        for future in concurrent.futures.as_completed(futures):
+            result = future.result()
+            if result:
+                active_site = result
+                break
+
+    if not active_site:
+        print("Aktif site bulunamadı.")
+        return channel_streams
+
+    print(f"Bulunan Domain: {active_site}")
+    event_url = f"{active_site}/event.html?id=androstreamlivebs1"
+
+    try:
+        r2 = requests.get(event_url, headers=headers, verify=False, timeout=10)
+        h2_text = r2.text
+    except Exception as e:
+        print(f"Event sayfası hatası: {e}")
+        return channel_streams
+
+    baseurl_match = re.search(
+        r'baseurls\s*=\s*\[(.*?)\]', h2_text, re.DOTALL | re.IGNORECASE
+    )
+    if not baseurl_match:
+        print("Sunucu adresleri bulunamadı.")
+        return channel_streams
+
+    urls_text = (
+        baseurl_match.group(1)
+        .replace('"', '')
+        .replace("'", "")
+        .replace("\n", "")
+        .replace("\r", "")
+    )
+    servers = [
+        url.strip()
+        for url in urls_text.split(',')
+        if url.strip().startswith("http")
+    ]
+    servers = list(set(servers))
+
+    active_servers = []
+    test_id = "androstreamlivebs1"
+    for server in servers:
+        server = server.rstrip('/')
+        test_url = (
+            f"{server}/{test_id}.m3u8"
+            if "checklist" in server
+        return
+
+    # Küçük/büyük harf ve boşluk farklarını tolere etmek için normalize ediyoruz
+    normalized_new = {
+        k.strip().lower(): v.strip() for k, v in channel_streams.items()
+    }
+
+    # Dosya henüz yoksa oluşturur
+    if not os.path.exists(file_path):
+        print(f"[!] '{file_path}' bulunamadı, yeni olarak oluşturuluyor...")
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+            for cname, stream_url in channel_streams.items():
+                f.write(f'#EXTINF:-1 group-title="Spor",{cname}\n')
+                f.write(f'{stream_url}\n\n')
+        print(f"[✓] '{file_path}' oluşturuldu.")
+        return
+
+    # Dosya varsa mevcut satırları oku ve linkleri yama
+    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
+        lines = f.readlines()
+
+    updated_lines = []
+    pending_new_url = None
+    updated_count = 0
+
+    for line in lines:
+        stripped = line.strip()
+
+        # 1. #EXTINF satırından kanal adını yakala
+        if stripped.startswith("#EXTINF"):
+            pending_new_url = None
+            if "," in stripped:
+                channel_name = stripped.rsplit(",", 1)[1].strip().lower()
+                if channel_name in normalized_new:
+                    pending_new_url = normalized_new[channel_name]
+
+            # Orijinal #EXTINF satırını (tvg-logo, id, grup vs.) HİÇ DEĞİŞTİRMEDEN ekle
+            updated_lines.append(line)
+
+        # 2. Diğer etiketler ve boş satırlar (#EXTVLCOPT vb.)
+        elif stripped.startswith("#") or not stripped:
+            updated_lines.append(line)
+
+        # 3. Yayın Linki satırı
+        else:
+            if pending_new_url:
+                # Eşleşen kanalın altına sadece yeni linki koy
+                updated_lines.append(pending_new_url + "\n")
+                pending_new_url = None
+                updated_count += 1
+            else:
+                # Eşleşmeyen kanalların eski linkine dokunma
+                updated_lines.append(line)
+
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.writelines(updated_lines)
+
+    print(
+        f"\n[✓] Başarılı! '{file_path}' dosyasındaki {updated_count} adet kanalın"
+        " linki güncellendi."
+    )
+
+
+def main():
+    print("İşlem Başladı...")
+    channel_streams = get_andro_content()
+
+    # Sadece tv247tr.m3u dosyasına yama uygula
+    update_m3u_by_name(OUTPUT_FILENAME, channel_streams)
+
+
+if __name__ == "__main__":
+    main()
+ 
